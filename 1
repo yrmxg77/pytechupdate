@@ -1,0 +1,9 @@
+from pymongo import MongoClient
+client = MongoClient('mongodb+srv://admin:admin@cluster0.69yidqp.mongodb.net/')
+db = client['pytech']
+collection = db['students']
+result = collection.find({"student_id": 1007})
+for document in result:
+    print(document)
+document = collection.find_one({"student_id": 1007})
+print(document)
